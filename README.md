@@ -127,4 +127,9 @@
 6. Configure database connection at .env
 7. Migrate database
 8. Clear cache 
-    - docker-compose exec app php artisan cache:Clear       
+    - docker-compose exec app php artisan cache:Clear
+9. Install laravel UI
+    - php artisan ui bootstrap
+    - php artisan ui bootstrap --auth
+    - npm install
+    - npm run dev
