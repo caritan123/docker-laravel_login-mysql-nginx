@@ -1,6 +1,6 @@
-Step by step installation:
+# Step by step installation:
 
-Setting up files:
+# Setting up files:
 1. Create directories
     - docker/php
     - docker/nginx
