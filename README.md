@@ -13,7 +13,8 @@
 
 3. Write some code
     - docker/php/Dockerfile
-    - 
+    -
+   
         FROM php:8.2-fpm
       
         RUN apt-get update && apt-get install -y \
@@ -34,6 +35,7 @@
 
     - docker/nginx/default.conf
     -
+   
         server {
             listen 80;
             index index.php index.html;
@@ -64,7 +66,8 @@
         
     
     - docker-compose.yml (Note: change values of container_name)
-    - 
+    -
+     
         services:
             app:
                 build:
@@ -117,11 +120,11 @@
 
 
 
-4. Run command in src directory
+5. Run command in src directory
     - docker-compose run --rm app composer create-project laravel/laravel:^11.0 .
     - docker-compose up -d
 
-5. Configure database connection at .env
-6. Migrate database
-7. Clear cache 
+6. Configure database connection at .env
+7. Migrate database
+8. Clear cache 
     - docker-compose exec app php artisan cache:Clear       
