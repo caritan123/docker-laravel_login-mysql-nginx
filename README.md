@@ -33,7 +33,7 @@
 
 
     - docker/nginx/default.conf
-      
+    -
         server {
             listen 80;
             index index.php index.html;
@@ -64,6 +64,7 @@
         
     
     - docker-compose.yml (Note: change values of container_name)
+    - 
         services:
             app:
                 build:
