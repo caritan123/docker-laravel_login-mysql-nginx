@@ -1,6 +1,6 @@
-Step by step installation:
+# Step by step installation:
 
-Setting up files:
+# Setting up files:
 1. Create directories
     - docker/php
     - docker/nginx
@@ -13,9 +13,10 @@ Setting up files:
 
 3. Write some code
     - docker/php/Dockerfile
+    -
+   
         FROM php:8.2-fpm
-
-        # Install system dependencies
+      
         RUN apt-get update && apt-get install -y \
             git curl libpng-dev libonig-dev libxml2-dev zip unzip \
             && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd intl
@@ -24,17 +25,17 @@ Setting up files:
             && chown -R www-data:www-data /var/www \
             && chmod -R 775 /var/www/storage /var/www/bootstrap/cache 
 
-        # Install Node.js (LTS version)
         RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
             && apt-get install -y nodejs
-
-        # Install Composer
+      
         COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
         WORKDIR /var/www
 
 
     - docker/nginx/default.conf
+    -
+   
         server {
             listen 80;
             index index.php index.html;
@@ -65,6 +66,8 @@ Setting up files:
         
     
     - docker-compose.yml (Note: change values of container_name)
+    -
+     
         services:
             app:
                 build:
@@ -117,11 +120,16 @@ Setting up files:
 
 
 
-4. Run command in src directory
+5. Run command in src directory
     - docker-compose run --rm app composer create-project laravel/laravel:^11.0 .
     - docker-compose up -d
 
-5. Configure database connection at .env
-6. Migrate database
-7. Clear cache 
-    - docker-compose exec app php artisan cache:Clear       
+6. Configure database connection at .env
+7. Migrate database
+8. Clear cache 
+    - docker-compose exec app php artisan cache:Clear
+9. Install laravel UI
+    - php artisan ui bootstrap
+    - php artisan ui bootstrap --auth
+    - npm install
+    - npm run dev
