@@ -17,7 +17,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
-    <link rel="stylesheet" href="http://localhost:8000/css/style.css">
+
+
     
  
     <!-- Scripts -->
@@ -69,6 +70,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="">
+                                        My Tasks
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -86,8 +92,11 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
+        <main class="py-5">
+            <div class="container">
+                @yield('content')
+            </div>
+            
         </main>
     </div>
 

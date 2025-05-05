@@ -1,5 +1,7 @@
 <?php
 
+// die(password_hash('data123', 1));
+
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
