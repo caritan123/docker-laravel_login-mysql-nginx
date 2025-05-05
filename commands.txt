@@ -1,0 +1,15 @@
+Setting up files: Window Subsystem for Linux (wsl)
+1. Create project directory
+    mkdir project-name 
+    cd project-name
+
+2. Create directories
+    mkdir docker
+    mkdir docker/php
+    mkdir docker/nginx
+    mkdir src
+
+3. Crate files
+    touch docker/php/Dockerfile
+    touch docker/nginx/default.conf
+    touch docker-compose.yml
