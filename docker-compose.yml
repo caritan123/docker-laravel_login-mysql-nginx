@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: docker/php/Dockerfile
-    container_name: mark-II-app
+    container_name: mark-III-app
     working_dir: /var/www
     volumes:
       - ./src:/var/www
@@ -15,7 +15,7 @@ services:
 
   nginx:
     image: nginx:alpine
-    container_name: mark-II-nginx
+    container_name: mark-III-nginx
     ports:
       - "8000:80"
     volumes:
@@ -28,7 +28,7 @@ services:
 
   mysql:
     image: mysql:8
-    container_name: mark-II-mysql
+    container_name: mark-III-mysql
     ports:
       - "3306:3306"
     environment:
