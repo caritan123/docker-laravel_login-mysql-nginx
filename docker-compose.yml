@@ -40,6 +40,18 @@ services:
       - mysql_data:/var/lib/mysql
     networks:
       - laravel
+  phpmyadmin:
+    depends_on:
+      - mysql
+    image: phpmyadmin/phpmyadmin
+    container_name: mark-III-phpmyadmin
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+    networks:
+      - laravel
+    ports:
+      - 8001:80
 
 networks:
   laravel:
